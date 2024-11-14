@@ -1,21 +1,100 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--secondary));
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }
 
-@media (prefers-color-scheme: dark) {
+.tablist::-webkit-scrollbar {
+  height: 0.8rem;
+  width: 0;
+}
+
+.tablist::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground));
+  border-radius: 10px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-resizer {
+  display: none;
+}
+
+*::-webkit-scrollbar-corner {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 0 100% 70%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --sidebar: 0 0% 100%;
+    --danger: 0 100% 68%;
+  }
+
+  .dark {
+    --background: 220 5% 12%;
+    --foreground: 0 0% 98%;
+    --card: 225 4% 19%;
+    --card-foreground: 0 0% 98%;
+    --popover: 225 4% 19%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 100% 70%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 220 9% 26%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 9% 26%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 4% 19%;
+    --input: 225 4% 19%;
+    --ring: 225 4% 19%;
+    --sidebar: 220 6% 9%;
+    --danger: 0 100% 68%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border dark:border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

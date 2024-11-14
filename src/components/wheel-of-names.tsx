@@ -11,9 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line
 import confetti from 'canvas-confetti'
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 export function WheelOfNames() {
   const [names, setNames] = useState([
